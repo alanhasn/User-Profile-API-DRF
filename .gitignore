@@ -1,2 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
 .env
 venv/
+ENV/
+env/
+.venv/
+
+# Django
+*.log
+media/
+staticfiles/
+static/
+local_settings.py
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test and coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.coverage.*
+
+# Migrations
+**/migrations/*.pyc
+**/migrations/__pycache__/
+**/migrations/*.py
+!**/migrations/__init__.py
