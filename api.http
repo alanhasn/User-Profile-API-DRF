@@ -1,0 +1,101 @@
+# ===========================
+# User Profile API HTTP Calls
+# ===========================
+
+# ---------------------------------
+# 1. Get All User Profiles (List)
+# ---------------------------------
+GET http://127.0.0.1:8000/api/users-profile/
+Authorization: Bearer <access_token>
+
+###
+
+# ---------------------------------
+# 2. Create a New User Profile
+# ---------------------------------
+POST http://127.0.0.1:8000/api/users-profile/
+Content-Type: application/json
+Authorization: Bearer <access_token>
+
+{
+    "first_name": "alano",
+    "last_name": "hassan",
+    "bio": "i am django Developer",
+    "phone_number": "023928302832323",
+    "country": "US",
+    "city": "California"
+}
+
+###
+
+# ---------------------------------
+# 3. Obtain JWT Token (Login)
+# ---------------------------------
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username": "alan",
+    "password": "2011"
+}
+
+###
+
+# ---------------------------------
+# 4. Verify JWT Token
+# ---------------------------------
+POST http://127.0.0.1:8000/api/token/verify/
+Content-Type: application/json
+
+{
+    "token": "<access_token>"
+}
+
+###
+
+# ---------------------------------
+# 5. Refresh JWT Token
+# ---------------------------------
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "<refresh_token>"
+}
+
+###
+
+# ---------------------------------
+# 6. Get Single User Profile (Detail)
+# ---------------------------------
+GET http://127.0.0.1:8000/api/users-profile/1
+Authorization: Bearer <access_token>
+
+###
+
+# ---------------------------------
+# 7. Update User Profile (PUT)
+# ---------------------------------
+PUT http://127.0.0.1:8000/api/users-profile/1
+Content-Type: application/json
+Authorization: Bearer <access_token>
+
+{
+    "first_name": "alan",
+    "last_name": "fgdg",
+    "bio": "Developer",
+    "phone_number": "45678",
+    "country": "Bulgaria",
+    "city": "sria",
+    "role": "Admin"
+}
+
+###
+
+# ===========================
+# Notes:
+# - Replace {{access_token}} and {{refresh_token}} with actual tokens or use VS Code REST Client variables.
+# - Use the "Obtain JWT Token" endpoint to get your tokens.
+# - Use "Verify" to check if a token is valid.
+# - Use "Refresh" to get a new access token using your refresh token.
+# ===========================
